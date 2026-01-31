@@ -1,7 +1,23 @@
 #!/usr/bin/env python3
 """
-Calculate the cofactor matrix of a square matrix.
+Calculate the adjugate matrix of a square matrix.
 """
+
+
+def adjugate(matrix):
+    """Calculate the adjugate matrix of a given square matrix.
+
+    Args:
+        matrix (list): A square matrix represented as a list of lists.
+    Returns:
+        list: The adjugate matrix.
+    """
+    cofactor_matrix = cofactor(matrix)
+    # Transpose the cofactor matrix to get the adjugate
+    adjugate_matrix = [
+        [cofactor_matrix[j][i] for j in range(len(cofactor_matrix))]
+        for i in range(len(cofactor_matrix))]
+    return adjugate_matrix
 
 
 def cofactor(matrix):
